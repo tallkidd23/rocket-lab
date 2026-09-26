@@ -3,73 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rocket Lab Computer</title>
+  <title>LabRocket LR-1983 Science Computer</title>
   <link rel="stylesheet" href="shell.css">
 </head>
 <body>
-  <main class="rocket-lab">
-    <section class="rocket-shell">
-      <div class="nose-cap">
-        <span>ROCKET LAB</span>
-        <small>PERSONAL SCIENCE COMPUTER</small>
-      </div>
+  <main class="rocket-lab" id="labrocket">
+    <section class="rocket-shell" aria-label="LabRocket LR-1983 science computer">
+      <header class="nose-cap">
+        <span>LABROCKET</span>
+        <small>LR-1983 / SCIENCE COMPUTER</small>
+      </header>
 
       <div class="control-deck">
-        <aside class="left-pod">
-          <div class="pod-label">NAV</div>
-          <button class="dpad up" data-key="ArrowUp">▲</button>
-          <button class="dpad left" data-key="ArrowLeft">◀</button>
-          <button class="dpad center" data-key="Enter">●</button>
-          <button class="dpad right" data-key="ArrowRight">▶</button>
-          <button class="dpad down" data-key="ArrowDown">▼</button>
-          <button class="small-button" data-key="Escape">TRIM</button>
+        <aside class="left-pod" aria-label="Navigation controls">
+          <div class="pod-label">NAV / CARTRIDGE</div>
+          <button class="dpad up" data-command="PREV" aria-label="Previous cartridge">▲</button>
+          <button class="dpad left" data-command="PREV" aria-label="Previous cartridge">◀</button>
+          <button class="dpad center" data-command="ENTER" aria-label="Select cartridge">●</button>
+          <button class="dpad right" data-command="NEXT" aria-label="Next cartridge">▶</button>
+          <button class="dpad down" data-command="NEXT" aria-label="Next cartridge">▼</button>
+          <button class="small-button" data-command="EJECT">EJECT</button>
         </aside>
 
         <section class="display housing">
           <div class="screen-topline">
-            <span>ROCKET LAB COMPUTER</span>
+            <span id="screenHeader">LABROCKET COMPUTER</span>
             <span id="powerLight">●</span>
           </div>
-
-          <div id="screen" class="screen">
-            <div class="screen-title">ROCKET LAB COMPUTER</div>
-            <div class="screen-rule"></div>
-            <div class="screen-message">SYSTEM READY</div>
-            <div class="screen-message">SELECT CARTRIDGE</div>
-
-            <div class="cartridge-list">
-              <button data-cartridge="GALAXY FORGE">[1] GALAXY FORGE</button>
-              <button data-cartridge="AIR CURRENT">[2] AIR CURRENT</button>
-              <button data-cartridge="LIGHT LAB">[3] LIGHT LAB</button>
-              <button data-cartridge="PALUDARIUM">[4] PALUDARIUM</button>
-            </div>
-
-            <div id="screenStatus" class="screen-status">PRESS A KEY</div>
+          <div id="screen" class="screen" tabindex="0" aria-live="polite">
+            <div id="bootLayer" class="screen-layer boot-layer"></div>
+            <div id="programLayer" class="screen-layer program-layer" hidden></div>
+            <div class="screen-glass"></div>
           </div>
         </section>
 
-        <aside class="right-pod">
+        <aside class="right-pod" aria-label="Action controls">
           <div class="pod-label">ACTION</div>
-          <button class="round-button button-a" data-key="a">A</button>
-          <button class="round-button button-b" data-key="b">B</button>
-          <button class="round-button button-c" data-key="c">C</button>
-          <button class="small-button start-button" data-key=" ">START</button>
-          <button class="small-button select-button" data-key="Tab">SELECT</button>
+          <button class="round-button button-a" data-command="RUN">A</button>
+          <button class="round-button button-b" data-command="STOP">B</button>
+          <button class="round-button button-c" data-command="MODE">C</button>
+          <button class="small-button start-button" data-command="RUN">START</button>
+          <button class="small-button select-button" data-command="ENTER">SELECT</button>
         </aside>
       </div>
 
       <section class="keyboard-area">
-        <div class="keyboard-label">MICRO KEYBOARD / INPUT TERMINAL</div>
+        <div class="keyboard-label">MICRO KEYBOARD / CARTRIDGE INPUT</div>
         <div id="keyboard" class="keyboard">
-          <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button data-key="0">0</button>
-          <button data-key="q">Q</button><button data-key="w">W</button><button data-key="e">E</button><button data-key="r">R</button><button data-key="t">T</button><button data-key="y">Y</button><button data-key="u">U</button><button data-key="i">I</button><button data-key="o">O</button><button data-key="p">P</button>
-          <button data-key="a">A</button><button data-key="s">S</button><button data-key="d">D</button><button data-key="f">F</button><button data-key="g">G</button><button data-key="h">H</button><button data-key="j">J</button><button data-key="k">K</button><button data-key="l">L</button><button data-key="Enter">ENTER</button>
-          <button data-key="Shift">SHIFT</button><button data-key="z">Z</button><button data-key="x">X</button><button data-key="c">C</button><button data-key="v">V</button><button data-key="b">B</button><button data-key="n">N</button><button data-key="m">M</button><button data-key="Backspace">⌫</button><button data-key=" ">SPACE</button>
+          <button data-command="RUN">RUN</button><button data-command="STOP">STOP</button><button data-command="MODE">MODE</button><button data-command="CLEAR">CLEAR</button><button data-command="EJECT">EJECT</button>
+          <button data-command="PREV">PREV</button><button data-command="NEXT">NEXT</button><button data-command="ENTER">ENTER</button><button data-command="ZOOM_OUT">-</button><button data-command="ZOOM_IN">+</button>
+        </div>
+      </section>
+
+      <section class="cartridge-bay" aria-label="Cartridge bay">
+        <div class="bay-label">CARTRIDGE BAY / SELECT PROGRAM</div>
+        <div id="cartridgeRail" class="cartridge-rail">
+          <button class="cartridge-card is-selected" data-cartridge="patterns"><span class="cartridge-number">01</span><span>PATTERNS</span><small>MATH / FORM</small></button>
+          <button class="cartridge-card" data-cartridge="gravity"><span class="cartridge-number">02</span><span>GRAVITY FORGE</span><small>ASTROPHYSICS</small></button>
+          <button class="cartridge-card" data-cartridge="reef"><span class="cartridge-number">03</span><span>SYNAPSE REEF</span><small>EMERGENT LIFE</small></button>
         </div>
       </section>
 
       <footer class="shell-footer">
-        <span>MODEL RL-1992</span><span>BATTERY: GOOD</span><span>CARTRIDGE: NONE</span>
+        <span>MODEL LR-1983</span><span>BATTERY: GOOD</span><span id="cartridgeReadout">CARTRIDGE: PATTERNS</span>
       </footer>
     </section>
   </main>
