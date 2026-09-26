@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Lab Computer</title>
+  <link rel="stylesheet" href="shell.css">
+</head>
+<body>
+  <main class="rocket-lab">
+    <section class="rocket-shell">
+      <div class="nose-cap">
+        <span>ROCKET LAB</span>
+        <small>PERSONAL SCIENCE COMPUTER</small>
+      </div>
+
+      <div class="control-deck">
+        <aside class="left-pod">
+          <div class="pod-label">NAV</div>
+          <button class="dpad up" data-key="ArrowUp">▲</button>
+          <button class="dpad left" data-key="ArrowLeft">◀</button>
+          <button class="dpad center" data-key="Enter">●</button>
+          <button class="dpad right" data-key="ArrowRight">▶</button>
+          <button class="dpad down" data-key="ArrowDown">▼</button>
+          <button class="small-button" data-key="Escape">TRIM</button>
+        </aside>
+
+        <section class="display housing">
+          <div class="screen-topline">
+            <span>ROCKET LAB COMPUTER</span>
+            <span id="powerLight">●</span>
+          </div>
+
+          <div id="screen" class="screen">
+            <div class="screen-title">ROCKET LAB COMPUTER</div>
+            <div class="screen-rule"></div>
+            <div class="screen-message">SYSTEM READY</div>
+            <div class="screen-message">SELECT CARTRIDGE</div>
+
+            <div class="cartridge-list">
+              <button data-cartridge="GALAXY FORGE">[1] GALAXY FORGE</button>
+              <button data-cartridge="AIR CURRENT">[2] AIR CURRENT</button>
+              <button data-cartridge="LIGHT LAB">[3] LIGHT LAB</button>
+              <button data-cartridge="PALUDARIUM">[4] PALUDARIUM</button>
+            </div>
+
+            <div id="screenStatus" class="screen-status">PRESS A KEY</div>
+          </div>
+        </section>
+
+        <aside class="right-pod">
+          <div class="pod-label">ACTION</div>
+          <button class="round-button button-a" data-key="a">A</button>
+          <button class="round-button button-b" data-key="b">B</button>
+          <button class="round-button button-c" data-key="c">C</button>
+          <button class="small-button start-button" data-key=" ">START</button>
+          <button class="small-button select-button" data-key="Tab">SELECT</button>
+        </aside>
+      </div>
+
+      <section class="keyboard-area">
+        <div class="keyboard-label">MICRO KEYBOARD / INPUT TERMINAL</div>
+        <div id="keyboard" class="keyboard">
+          <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button data-key="0">0</button>
+          <button data-key="q">Q</button><button data-key="w">W</button><button data-key="e">E</button><button data-key="r">R</button><button data-key="t">T</button><button data-key="y">Y</button><button data-key="u">U</button><button data-key="i">I</button><button data-key="o">O</button><button data-key="p">P</button>
+          <button data-key="a">A</button><button data-key="s">S</button><button data-key="d">D</button><button data-key="f">F</button><button data-key="g">G</button><button data-key="h">H</button><button data-key="j">J</button><button data-key="k">K</button><button data-key="l">L</button><button data-key="Enter">ENTER</button>
+          <button data-key="Shift">SHIFT</button><button data-key="z">Z</button><button data-key="x">X</button><button data-key="c">C</button><button data-key="v">V</button><button data-key="b">B</button><button data-key="n">N</button><button data-key="m">M</button><button data-key="Backspace">⌫</button><button data-key=" ">SPACE</button>
+        </div>
+      </section>
+
+      <footer class="shell-footer">
+        <span>MODEL RL-1992</span><span>BATTERY: GOOD</span><span>CARTRIDGE: NONE</span>
+      </footer>
+    </section>
+  </main>
+  <script src="shell.js"></script>
+</body>
+</html>
